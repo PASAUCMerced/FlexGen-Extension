@@ -62,15 +62,10 @@ This project was made possible thanks to a collaboration with
 Requirements:  
  - PyTorch >= 1.12 [(Help)](https://pytorch.org/get-started/locally/)
 
-### Method 1: With pip
+### Method 1: From source
 ```
-pip install flexgen
-```
-
-### Method 2: From source
-```
-git clone https://github.com/FMInference/FlexGen.git
-cd FlexGen
+git clone https://github.com/PASAUCMerced/FlexGen-Extension.git
+cd FlexGen-Extension
 pip install -e .
 ```
 
