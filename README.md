@@ -71,6 +71,15 @@ pip install -e .
 
 ## Usage and Examples
 
+### LLaMA-1 Support
+You can run LLaMA-1 with FlexGen by using the following command:
+```
+python3 flexgen.flex_llama --model "huggyllama/llama-30b"
+```
+(1) The execution behaves like OPT, just replace flex_opt with flex_llama, and model to "huggyllama/llama-x" (x is the model size, e.g., 7b, 13b, 30b and 65b).
+
+(2) Other options are same as FlexGen, including how you set offloading percentage, compression, and cpu-cache-compute.
+
 ### Get Started with a Single GPU
 
 #### OPT-1.3B
