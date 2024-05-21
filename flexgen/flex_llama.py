@@ -1185,48 +1185,12 @@ def get_filename(args):
     return filename
 
 def get_test_inputs(prompt_len, num_prompts, tokenizer):
-#     prompts = ["""
-# The Fall of the Ancient Kingdom 
-
-# Lush green hills rolled gently under clear blue skies as Lia gazed wistfully upon her kingdom. The ancient city sprawled before her, stone walls and glittering towers blinking in the summer sun. This had been her home since birth, but troubling omens foretold its destruction.
-
-# As the king’s daughter, Lia possessed magic allowing her to interpret signs and portents. Of late, the messages felt darker. Cracks veined the castle foundations, shadows danced at the edge of her vision, fires guttered and embers refused to catch. Whispers from restless spirits told of a great cataclysm fast approaching. 
-
-# Something ancient and terrible stirred beneath the kingdom. Impending doom ate at Lia, but the king resisted her pleas to evacuate the people.
-
-# “I will not abandon this city on the word of spirits,” he scoffed. “We have withstood many threats before.”
-
-# But Lia knew this was different. This primordial force cared not for walls or armies. It would swallow them all if they did not flee.
-
-# On the eve of the summer solstice, the earth trembled. It started as faint rumble then erupted into a bone rattling quake. Fissures cracked walls and brought down watchtowers. Fiery catacombs glowed beneath the ancient flagstones. 
-
-# Chaos erupted as terrified citizens fled through the streets. But there was no escape from the angry mountain intent on burying them. Rivers of lava burst forth, incinerating everything in their path. Sulfurous plumes blotted out the sun and rained ash upon the kingdom.
-
-# Lia rode hard through the crumbling city, determined to save who she could. All around her, familiar streets burned. Temples that had stood for millennia collapsed in flames. She reached the gates, now bent and glowing red hot.
-
-# Beyond lay a perilous road into exile. Rough mountain passes and shadowy valleys. But it was their only hope.
-
-# With heavy heart, Lia led survivors higher into the peaks. She glanced back once at her smoldering home, now lost to fire and ruin. They marched on through the night, the mountain’s rage lighting their way.
-
-# When dawn broke, Lia saw that a handful had survived the kingdom’s fall. They looked to her with hollow, haunted eyes awaiting direction. She must guide them somewhere safe, help them build a new home. 
-
-# The road ahead would be hard, but they would endure. Though the kingdom perished, its spirit lived on in their hearts. Diminished but unbroken, they turned toward the rising sun. Wherever the road led, they would walk it together.
-
-# The fall of Lia’s kingdom marked the end of a glorious era. But legends endured of the lost princess who led her people to safety with wisdom and grace. Though the kingdom crumbled, she remained undefeated. Her display of courage and leadership in its final dark days passed permanently into folklore. The kingdom was gone but Lia's inspiration and bravery shone like a beacon through the ages.
-# """]
-    # prompts = ["Paris is the capital city of"]
     prompts = [
-        # For these prompts, the expected answer is the natural continuation of the prompt
         # "Simply put, the theory of relativity states that ",
-        "I believe the meaning of life is",
-        # """A brief message congratulating the team on the launch:
 
-        # Hi everyone,
-        
-        # I just """,
-    #     # Few shot prompt (providing a few examples before asking model to complete more);
+        "I believe the meaning of life is",
+
         # """Translate English to French:
-        
         # sea otter => loutre de mer
         # peppermint => menthe poivrée
         # plush girafe => girafe peluche
@@ -1236,16 +1200,10 @@ def get_test_inputs(prompt_len, num_prompts, tokenizer):
                           max_length=prompt_len).input_ids
     return (input_ids[0],) * num_prompts
 
-from transformers import LlamaTokenizer
-
 def run_flexgen(args):
     print(f"<run_flexgen>: args.model: {args.model}")
     tokenizer = AutoTokenizer.from_pretrained(args.model, padding_side="left")
-    # tokenizer = LlamaTokenizer.from_pretrained("decapoda-research/llama-7b-hf", padding_side="left")
-    # tokenizer = LlamaTokenizer.from_pretrained(args.model, padding_side="left")
-    # tokenizer.pad_token = tokenizer.eos_token
     tokenizer.pad_token = '[PAD]'
-    # tokenizer.add_special_tokens({'pad_token': '[PAD]'})
     num_prompts = args.num_gpu_batches * args.gpu_batch_size
     prompt_len, gen_len, cut_gen_len = args.prompt_len, args.gen_len, args.cut_gen_len
     # Task and policy
