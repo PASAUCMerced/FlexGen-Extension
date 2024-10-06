@@ -1,0 +1,43 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: "Liu"
+    given-names: "Jie"
+  - family-names: "Wang"
+    given-names: "Xi"
+  - family-names: "Wu"
+    given-names: "Jianbo"
+  - family-names: "Yang"
+    given-names: "Shuangyan"
+  - family-names: "Ren"
+    given-names: "Jie"
+  - family-names: "Shankar"
+    given-names: "Bhanu"
+  - family-names: "Li"
+    given-names: "Dong"
+title: "Exploring and Evaluating Real-world CXL: Use Cases and System Adoption"
+version: 1.0.0
+doi: "10.48550/arXiv.2405.14209"
+date-released: 2024-05-23
+url: "https://arxiv.org/abs/2405.14209"
+preferred-citation:
+  type: article
+  authors:
+    - family-names: "Liu"
+      given-names: "Jie"
+    - family-names: "Wang"
+      given-names: "Xi"
+    - family-names: "Wu"
+      given-names: "Jianbo"
+    - family-names: "Yang"
+      given-names: "Shuangyan"
+    - family-names: "Ren"
+      given-names: "Jie"
+    - family-names: "Shankar"
+      given-names: "Bhanu"
+    - family-names: "Li"
+      given-names: "Dong"
+  doi: "10.48550/arXiv.2405.14209"
+  journal: "arXiv preprint arXiv:2405.14209"
+  title: "Exploring and Evaluating Real-world CXL: Use Cases and System Adoption"
+  year: 2024
