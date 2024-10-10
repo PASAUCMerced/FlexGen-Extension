@@ -126,6 +126,14 @@ They save more memory but run slower.
 
 ## Citation
 ```
+@article{wu2024lm,
+  title={LM-Offload: Performance Model-Guided Generative Inference of Large Language Models with Parallelism Control},
+  author={Wu, Jianbo and Ren, Jie and Yang, Shuangyan and Parasyris, Konstantinos and Georgakoudis, Giorgis and Laguna, Ignacio and Li, Dong},
+  year={2024}
+}
+```
+
+```
 @article{liu2024exploring,
   title={Exploring and Evaluating Real-world CXL: Use Cases and System Adoption},
   author={Liu, Jie and Wang, Xi and Wu, Jianbo and Yang, Shuangyan and Ren, Jie and Shankar, Bhanu and Li, Dong},
